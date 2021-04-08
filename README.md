@@ -15,7 +15,7 @@ SO THAT I can manage my time effectively
 ```
 
 ## Acceptance Criteria
-
+<!-- worked with xavier and hayden -->
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 <!-- Use javascript moment function or jquery ui to display date, time and month -->
