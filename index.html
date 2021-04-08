@@ -21,57 +21,57 @@
     <link rel="stylesheet" href="style.css" />
     <title>Work Day Scheduler</title>
   </head>
-
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    
     <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <ul class="list-group list1">
-            <li class="list-group-item"></li>
-            <li class="list-group-item list-group-item-primary"></li>
-            <li class="list-group-item list-group-item-secondary"></li>
-            <li class="list-group-item list-group-item-success"></li>
-            <li class="list-group-item list-group-item-danger"></li>
-            <li class="list-group-item list-group-item-warning"></li>
-            <li class="list-group-item list-group-item-info"></li>
-            <li class="list-group-item list-group-item-light"></li>
-            <li class="list-group-item list-group-item-dark"></li>
-          </ul>
+        <div class="row">
+          <div class="col-2">
+            <ul class="list-group list1">
+              <li class="list-group-item">Hours</li>
+              <li class="list-group-item list-group-item 9am mystyle">9am</li>
+              <li class="list-group-item list-group-item 10am mystyle">10am</li>
+              <li class="list-group-item list-group-item 11am mystyle">11am</li>
+              <li class="list-group-item list-group-item 12pm mystyle">12pm</li>
+              <li class="list-group-item list-group-item 1pm mystyle">1pm</li>
+              <li class="list-group-item list-group-item 2pm mystyle">2pm</li>
+              <li class="list-group-item list-group-item 3pm mystyle">3pm</li>
+              <li class="list-group-item list-group-item 4pm mystyle">4pm</li>
+              <li class="list-group-item list-group-item 5pm mystyle">5pm</li>
+            </ul>
+          </div>
+          <div class="col-7">
+            <ul class="list-group list2">
+              <li class="list-group-item">Plans for the day</li>
+              <li class="list-group-item list-group-item 9am"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 10am"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 11am"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 12pm"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 1pm"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 2pm"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 3pm"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 4pm"><textarea></textarea></li>
+              <li class="list-group-item list-group-item 5pm"><textarea></textarea></li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <ul class="list-group list3">
+              <li class="list-group-item">Save daily plans</li>
+              <li class="list-group-item list-group-item 9am astyle"><input class="btn btn-primary" type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 10am astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 11am astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 12pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 1pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 2pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 3pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 4pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+              <li class="list-group-item list-group-item 5pm astyle"><input class="btn btn-primary " type="submit" value="Submit"><input class="btn btn-primary m-1 p-2" type="reset" value="Reset"></li>
+            </ul>
+          </div>
         </div>
-      <div class ="col-8">
-      <ul class="list-group list2">
-        <li class="list-group-item"><h1>Hours of the day:</h1></li>
-        <li class="list-group-item list-group-item-primary"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-secondary"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-success"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-danger"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-warning"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-info"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-light"><textarea></textarea></li>
-        <li class="list-group-item list-group-item-dark"><textarea></textarea></li>
-      </ul>
-      </div>
-      <div class = "col-2">
-        <ul class="list-group list3">
-          <li class="list-group-item"></li>
-          <li class="list-group-item list-group-item-primary"></li>
-          <li class="list-group-item list-group-item-secondary"></li>
-          <li class="list-group-item list-group-item-success"></li>
-          <li class="list-group-item list-group-item-danger"></li>
-          <li class="list-group-item list-group-item-warning"></li>
-          <li class="list-group-item list-group-item-info"></li>
-          <li class="list-group-item list-group-item-light"></li>
-          <li class="list-group-item list-group-item-dark"></li>
-        </ul>
-      </div>
-      
-      </div>
       <!-- Timeblocks go here -->
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
