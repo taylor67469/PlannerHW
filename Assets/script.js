@@ -31,17 +31,17 @@ function checkTime(){
         times[a].css('color', 'white');
     if(timet>9&&timet<17){
         for(var i=a+1;i<times.length;i++){
-            times[i].css('background-color', 'grey');
+            times[i].css('background-color', 'green');
             times[i].css('color', 'white');
         }
         for (var b=a-1;b>=0;b--){
-            times[b].css('background-color', 'green');
+            times[b].css('background-color', 'grey');
             times[b].css('color', 'white');
         }
     }
     else if(timet>17||timet<9){
         for(var i=0;i<times.length;i++){
-            times[i].css('background-color', 'grey');
+            times[i].css('background-color', 'green');
             times[i].css('color', 'white');
         }
     }
