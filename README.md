@@ -1,4 +1,10 @@
 # 05 Third-Party APIs: Work Day Scheduler
+-----------------worked with xavier and hayden-----------------
+functions:
+submit and reset button showing
+The colors work in the timeslot for the calender
+you can type into the textbox but it wont save
+displays the time of day
 
 ## Your Task
 
@@ -15,7 +21,7 @@ SO THAT I can manage my time effectively
 ```
 
 ## Acceptance Criteria
-<!-- worked with xavier and hayden -->
+
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 <!-- Use javascript moment function or jquery ui to display date, time and month -->
