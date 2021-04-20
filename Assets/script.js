@@ -32,7 +32,7 @@ var numbers=[
 ];
 var timet=0; //current time
 var a =0;
-var q;
+var count=0;
 //displays time and does everything
 function displaytime(){
     var datetime=moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -40,8 +40,15 @@ function displaytime(){
     var time=moment().format('H');
     JSON.stringify(time);
     timet=parseInt(time);
+    if(timet>0){
     a=timet-9;
     checkTime();
+    }
+    else{
+        timet=24;
+        a=timet-9;
+        checkTime();
+    }
 }
 //colors rows
 function checkTime(){
@@ -52,17 +59,17 @@ function checkTime(){
         times[a].css('background-color', 'red');
         times[a].css('color', 'white');
     if(timet>=9&&timet<17 || timet ===17){
-        for(var i=a+1;i<times.length;i++){
+        for(let i=a+1;i<times.length;i++){
             times[i].css('background-color', 'green');
             times[i].css('color', 'white');
         }
-        for (var b=a-1;b>=0;b--){
+        for (let b=a-1;b>=0;b--){
             times[b].css('background-color', 'grey');
             times[b].css('color', 'white');
         }
     }
     else if(timet>17||timet<9){
-        for(var i=0;i<times.length;i++){
+        for(let i=0;i<times.length;i++){
             times[i].css('background-color', 'green');
             times[i].css('color', 'white');
         }
@@ -71,26 +78,37 @@ function checkTime(){
 }
 //save local data to storage
 function saveToStorage(row,dataAsAString){
-
-    localStorage.setItem(("Hour-"+ row),dataAsAString);
+    count++;
+    return localStorage.setItem(row,dataAsAString);
 }
 //get row data from storage
-function getFromStorage(row,dataAsAString){
-    return localStorage.getItem(("Hour-"+row),dataAsAString);
+function getFromStorage(row){
+    return localStorage.getItem(row);
 }
 //sets local storage
 setInterval(displaytime,0);
-$('.buttons1').click(function(){
-    for(var l=0;l<localDataArray.length;l++){
+$('.buttons1').click(function(event){
     event.preventDefault();
-    numbers[l]=l;
-    JSON.stringify(numbers[l]);
-    JSON.stringify(localDataArray[l]);
-    saveToStorage(numbers[l],localDataArray[l].value);
-    }
+    let s= event.target.id;
+    let mynew=s.replace("D","");
+    saveToStorage(mynew,(localDataArray[count].val()));
 });
-//dont know how to get the local storage 
-for(var i=0;i<localDataArray.length;i++){
-    localDataArray=localDataArray[i];
-    console.log(localDataArray[i]);
+function populate(){
+for (let i=1;i<localDataArray.length+1;i++){
+    let test=JSON.stringify(i);
+    let myStorage=getFromStorage(test);
+    if(myStorage!=='null'){
+        localDataArray[i-1].text(myStorage);
+    }
 }
+}
+if(localStorage.length>0){
+$('.reset1').click(function(event){
+    event.preventDefault();
+    let myID=event.target.id;
+    let reseting=myID.replace("S","");
+    if (localStorage!="")
+    localStorage.removeItem(reseting);
+});
+}
+populate();
