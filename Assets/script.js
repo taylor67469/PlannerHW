@@ -88,6 +88,7 @@ function getFromStorage(row){
 //sets local storage
 setInterval(displaytime,0);
 $('.buttons1').mouseover(function(event){
+    event.preventDefault();
     let s= event.target.id;
     let mynew=s.replace("D","");
     saveToStorage(mynew,(localDataArray[count].val()));
@@ -103,6 +104,7 @@ for (let i=1;i<localDataArray.length+1;i++){
 }
 if(localStorage.length>0){
 $('.reset1').mouseover(function(event){
+    event.preventDefault();
     let myID=event.target.id;
     let reseting=myID.replace("S","");
     if (localStorage!="")
