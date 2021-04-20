@@ -87,8 +87,7 @@ function getFromStorage(row){
 }
 //sets local storage
 setInterval(displaytime,0);
-$('.buttons1').click(function(event){
-    event.preventDefault();
+$('.buttons1').on('click',function(event){
     let s= event.target.id;
     let mynew=s.replace("D","");
     saveToStorage(mynew,(localDataArray[count].val()));
@@ -103,8 +102,7 @@ for (let i=1;i<localDataArray.length+1;i++){
 }
 }
 if(localStorage.length>0){
-$('.reset1').click(function(event){
-    event.preventDefault();
+$('.reset1').on('click',function(event){
     let myID=event.target.id;
     let reseting=myID.replace("S","");
     if (localStorage!="")
