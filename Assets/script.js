@@ -87,12 +87,13 @@ function getFromStorage(row){
 }
 //sets local storage
 setInterval(displaytime,0);
-$('.buttons1').mouseover(function(event){
-    event.preventDefault();
+$('.buttons1').click(function(event){
     let s= event.target.id;
     let mynew=s.replace("D","");
+    if (localDataArray[count].val()!=""){
     saveToStorage(mynew,(localDataArray[count].val()));
-});
+    }
+    });
 function populate(){
 for (let i=1;i<localDataArray.length+1;i++){
     let test=JSON.stringify(i);
@@ -103,12 +104,12 @@ for (let i=1;i<localDataArray.length+1;i++){
 }
 }
 if(localStorage.length>0){
-$('.reset1').mouseover(function(event){
-    event.preventDefault();
+$('.reset1').click(function(event){
     let myID=event.target.id;
     let reseting=myID.replace("S","");
     if (localStorage!="")
     localStorage.removeItem(reseting);
+    localDataArray[count].text('');
 });
 }
 populate();
