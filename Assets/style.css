@@ -34,6 +34,10 @@ textarea {
   font-size: 7px;
   width: 40%;
 }
+li{
+  width:100%;
+  height:100px;
+}
 @media screen and (max-width: 992px) {
   *{
     font-size: 7px;
