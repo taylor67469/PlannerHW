@@ -32,7 +32,6 @@ var numbers=[
 ];
 var timet=0; //current time
 var a =0;
-var count=0;
 //displays time and does everything
 function displaytime(){
     var datetime=moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -78,7 +77,6 @@ function checkTime(){
 }
 //save local data to storage
 function saveToStorage(row,dataAsAString){
-    count++;
     return localStorage.setItem(row,dataAsAString);
 }
 //get row data from storage
@@ -90,8 +88,11 @@ setInterval(displaytime,0);
 $('.buttons1').click(function(event){
     let s= event.target.id;
     let mynew=s.replace("D","");
-    if (localDataArray[count].val()!=""){
-    saveToStorage(mynew,(localDataArray[count].val()));
+    let testing= parseInt(s.replace("D",""))
+    testing--
+    JSON.stringify(testing)
+    if (localDataArray[testing].val()!=undefined){
+    saveToStorage(mynew,(localDataArray[testing].val()));
     }
     });
 function populate(){
@@ -103,13 +104,14 @@ for (let i=1;i<localDataArray.length+1;i++){
     }
 }
 }
-if(localStorage.length>0){
 $('.reset1').click(function(event){
     let myID=event.target.id;
     let reseting=myID.replace("S","");
-    if (localStorage!="")
+    if (localStorage!=""){
     localStorage.removeItem(reseting);
-    localDataArray[count].text('');
+    let myText = parseInt(reseting);
+    localDataArray[myText-1].val("");
+    }
 });
-}
+
 populate();
